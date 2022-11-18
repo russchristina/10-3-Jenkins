@@ -17,9 +17,10 @@ pipeline{
 
         stage('Deploy'){
             steps{
-                echo 'Deploying app...'
-		sh 'JENKINS_NODE_COOKIE=dontKillMe'
-                sh 'java -jar ./target/*.jar'
+                 withEnv(['JENKINS_NODE_COOKIE=dontKillMe']){
+                    echo 'Deploying app...'
+                    sh 'java -jar ./target/*.jar'
+                 }
             }
         }
     }
