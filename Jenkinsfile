@@ -18,7 +18,8 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'Deploying app...'
-                sh 'java -jar ./target/*.jar &'
+		sh 'export BUILD_ID=dontKillMe'
+                sh 'java -jar ./target/*.jar'
             }
         }
     }
