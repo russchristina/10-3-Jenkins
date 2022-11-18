@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo 'Building...'
+                echo 'Building after webhook added...'
                 sh 'sudo sh ./mvnw clean package -DskipTests'
             }
         }
