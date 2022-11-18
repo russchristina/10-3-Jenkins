@@ -18,7 +18,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'Deploying app...'
-		sh 'export JENKINS_NODE_COOKIE=dontKillMe'
+		sh 'JENKINS_NODE_COOKIE=dontKillMe'
                 sh 'java -jar ./target/*.jar'
             }
         }
